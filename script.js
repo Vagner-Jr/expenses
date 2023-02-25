@@ -4,8 +4,7 @@ const reset = document.getElementById("btn-reset");
 const descriptionResponse = document.querySelector(".descriptionResponse");
 const totalResponse = document.querySelector(".totalResponse");
 
-
-let response = '';
+let response = "";
 let numOfPays = 0;
 let total = 0;
 
@@ -20,13 +19,17 @@ submit.addEventListener("click", (e) => {
   response = `${response}${description} - R$ ${price.toFixed(2)} \n`;
 
   descriptionResponse.innerText = response;
-  totalResponse.innerText = `${numOfPays} Conta(s) - Total: R$ ${total.toFixed(2)}`;
+  totalResponse.innerText = `${numOfPays} Conta(s) - Total: R$ ${total.toFixed(
+    2
+  )}`;
 });
 
-
 reset.addEventListener("click", (e) => {
-    descriptionResponse.innerText = '💵'
-    totalResponse.innerText = ''
-    frm.inDescription.value = ''
-    frm.inPrice.value = ''
-})
+  descriptionResponse.innerText = "💵";
+  totalResponse.innerText = "";
+  frm.inDescription.value = "";
+  frm.inPrice.value = "";
+  response = "";
+  numOfPays = 0;
+  total = 0;
+});
